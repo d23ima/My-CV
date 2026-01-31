@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel Gorfu Asefa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #2c5282;
+            --accent: #e63946;
+            --accent-light: #f28482;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --tea: #3c8d50;
+            --patriot: #d62828;
+            --ethub: #4361ee;
+            --success: #2a9d8f;
+            --one-percent: #e67e22;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fb 0%, #e3e9f7 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--accent);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.3) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.3) 0%, transparent 20%);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(230,57,70,0.3) 0%, transparent 80%);
+            padding: 0 8px;
+            font-weight: 500;
+        }
+        
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+            background: rgba(255,255,255,0.15);
+            padding: 15px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            color: var(--accent-light);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #c1121f 100%);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(198, 17, 31, 0.4);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 20px rgba(198, 17, 31, 0.6);
+        }
+        
+        .nav-btn.secondary {
+            background: linear-gradient(135deg, var(--primary) 0%, #153a6e 100%);
+            box-shadow: 0 4px 15px rgba(26, 58, 108, 0.4);
+        }
+        
+        .nav-btn.secondary:hover {
+            box-shadow: 0 7px 20px rgba(26, 58, 108, 0.6);
+        }
+        
+        .nav-btn.one-percent {
+            background: linear-gradient(135deg, var(--one-percent) 0%, #d35400 100%);
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+        }
+        
+        .nav-btn.one-percent:hover {
+            box-shadow: 0 7px 20px rgba(230, 126, 34, 0.6);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 40px 0;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.7s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            opacity: 0.05;
+            background: var(--primary);
+            border-radius: 0 0 0 100%;
+            z-index: 0;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--light-gray);
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        h2 i {
+            color: var(--accent);
+            font-size: 2.2rem;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            font-size: 1.7rem;
+            margin: 30px 0 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        h3:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 12px;
+            height: 25px;
+            width: 8px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .date {
+            background: var(--light);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+        
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .competency-category {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .competency-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .competency-category h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .competency-category h4 i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .project-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .project-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 8px 20px;
+            font-weight: 600;
+            border-radius: 0 0 0 12px;
+            font-size: 0.9rem;
+            color: white;
+        }
+        
+        .project-card.patriot {
+            border-left-color: var(--patriot);
+        }
+        
+        .project-card.patriot .project-tag {
+            background: var(--patriot);
+        }
+        
+        .project-card.ethub {
+            border-left-color: var(--ethub);
+        }
+        
+        .project-card.ethub .project-tag {
+            background: var(--ethub);
+        }
+        
+        .project-card.tea {
+            border-left-color: var(--tea);
+        }
+        
+        .project-card.tea .project-tag {
+            background: var(--tea);
+        }
+        
+        .impact-metric {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, #c1121f 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        /* Tax System Showcase */
+        .achievements-section {
+            padding: 40px 0 20px;
+        }
+        
+        .achievement-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .card-header {
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .card-title {
+            flex: 1;
+        }
+        
+        .card-title h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: white;
+            padding-left: 0;
+        }
+        
+        .card-title h3:before {
+            content: none;
+        }
+        
+        .card-body {
+            padding: 25px;
+            flex: 1;
+        }
+        
+        .card-body p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .impact-metric-large {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--success) 0%, #1d7a6b 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 10px 0 20px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(42, 157, 143, 0.4);
+        }
+        
+        .tech-stack {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .tech-stack h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-item {
+            background: var(--light);
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .system-overview {
+            background: linear-gradient(135deg, #2c5282 0%, #1a3a6c 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .system-content h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .system-content p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        
+        .system-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .diagram-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .diagram-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-light);
+        }
+        
+        .diagram-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+            padding-left: 0;
+        }
+        
+        .diagram-item h3:before {
+            content: none;
+        }
+        
+        /* Other sections */
+        .personal-profile {
+            background: linear-gradient(135deg, #2c5282 0%, #1a3a6c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .personal-profile:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,100 L0,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .personal-profile h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+        }
+        
+        .personal-profile h3:before {
+            background: var(--accent-light);
+        }
+        
+        .family-icon {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .family-member {
+            text-align: center;
+        }
+        
+        .family-member i {
+            background: rgba(255,255,255,0.15);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .signature {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid var(--light-gray);
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .signature-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .signature-block {
+            display: inline-block;
+            padding: 15px 25px;
+            background: var(--light);
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+        
+        .cert-section {
+            background: rgba(26, 58, 108, 0.07);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .video-note {
+            background: rgba(230, 57, 70, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--gray);
+            font-size: 1rem;
+            border-top: 1px solid var(--light-gray);
+            margin-top: 40px;
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--accent) 0%, #c1121f 100%);
+            color: white;
+            border: none;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(198, 17, 31, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(198, 17, 31, 0.7);
+        }
+        
+        /* New Styles for Job Requirements */
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .requirement-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--one-percent);
+            transition: all 0.3s ease;
+        }
+        
+        .requirement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .requirement-card h4 {
+            color: var(--one-percent);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .requirement-card h4 i {
+            font-size: 1.5rem;
+        }
+        
+        .match-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .faq-question {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-question i {
+            color: var(--one-percent);
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.4rem;
+            }
+            
+            .contact-bar {
+                flex-direction: column;
+                gap: 15px;
+                border-radius: 20px;
+                padding: 20px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .content-section {
+                padding: 30px 20px;
+            }
+            
+            .achievement-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .family-icon {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .signature {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .system-diagram {
+                grid-template-columns: 1fr;
+            }
+            
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Header -->
+    <section class="hero-section">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <h1>Abel Gorfu Asefa</h1>
+            <div class="hero-tagline">
+                Curriculum Vitae
+            </div>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Applying aviation precision and AI innovation to optimize distribution ecosystems</p>
+            
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Addis Ababa, Ethiopia</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+251 967 426 188</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>abelgorfu6@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/abel-gorfu-asefa</span>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="showSection('resume')">
+                    <i class="fas fa-file-alt"></i> Resume
+                </button>
+                <button class="nav-btn secondary" onclick="showSection('cover-letter')">
+                    <i class="fas fa-envelope-open-text"></i> Value Proposition
+                </button>
+                <button class="nav-btn one-percent" onclick="showSection('job-requirements')">
+                    <i class="fas fa-clipboard-list"></i> Job Requirements
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Resume Section -->
+        <section id="resume" class="content-section active">
+            <div class="section-pattern"></div>
+            <h2><i class="fas fa-user-tie"></i> Professional Profile</h2>
+            <p>Visionary solution architect with expertise in Aviation Management and Artificial Intelligence. Developer of transformative platforms including Patriot ET Tax Automation System, EThub entrepreneur ecosystem, and Portfolio Management Dashboard. Proven ability to deliver 90%+ efficiency improvements in complex systems through innovative technology solutions.</p>
+            
+            <h2><i class="fas fa-star"></i> Core Competencies</h2>
+            <div class="competency-grid">
+                <div class="competency-category">
+                    <h4><i class="fas fa-robot"></i> Technical Innovation</h4>
+                    <ul>
+                        <li>AI & Machine Learning Implementation</li>
+                        <li>SaaS Architecture & Development</li>
+                        <li>Python Programming</li>
+                        <li>Process Automation</li>
+                        <li>Data-Driven Decision Making</li>
+                    </ul>
+                </div>
+                <div class="competency-category">
+                    <h4><i class="fas fa-chart-line"></i> Business Leadership</h4>
+                    <ul>
+                        <li>Venture Portfolio Management</li>
+                        <li>Startup Development & Scaling</li>
+                        <li>Investor Relations & Fundraising</li>
+                        <li>Strategic Business Planning</li>
+                        <li>Cross-Functional Team Leadership</li>
+                    </ul>
+                </div>
+                <div class="competency-category">
+                    <h4><i class="fas fa-globe"></i> Distribution Solutions</h4>
+                    <ul>
+                        <li>B2B & B2C Process Optimization</li>
+                        <li>Supply Chain Efficiency</li>
+                        <li>E-commerce Integration</li>
+                        <li>End-to-End Distribution Strategy</li>
+                        <li>Process Innovation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2><i class="fas fa-lightbulb"></i> Portfolio Projects</h2>
+            <div class="video-note">
+                <i class="fas fa-info-circle"></i> All projects are fully developed and deployed on Vercel. Click links to view live demos.
+            </div>
+            
+            <div class="project-card patriot">
+                <div class="project-tag">SaaS Platform</div>
+                <h4>Patriot ET Tax Compliance Platform</h4>
+                <div class="impact-metric">Solution for Ethiopia's VAT challenges</div>
+                <ul>
+                    <li>AI-powered platform to detect and prevent fraudulent VAT documents</li>
+                    <li>Completed specialized Tax Law training at Ministry of Revenue</li>
+                    <li>Architected to save businesses and government millions annually</li>
+                    <li>Positioned to transform Ethiopia's tax compliance landscape</li>
+                </ul>
+                <a href="https://v0-ethiopia-fraud-detector.vercel.app/" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Live Project
+                </a>
+            </div>
+            
+            <div class="project-card ethub">
+                <div class="project-tag">Ecosystem Builder</div>
+                <h4>EThub Entrepreneur Platform</h4>
+                <ul>
+                    <li>Connection platform for entrepreneurs and investors</li>
+                    <li>Training system for developing bankable proposals</li>
+                    <li>Consultation framework for venture development</li>
+                    <li>Designed to strengthen Ethiopia's entrepreneurial ecosystem</li>
+                </ul>
+                <a href="https://v0-ethiopian-entrepreneur-platform.vercel.app/" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Live Project
+                </a>
+            </div>
+            
+            <div class="project-card">
+                <h4>Portfolio Management Dashboard</h4>
+                <ul>
+                    <li>Developed system to efficiently manage multiple ventures</li>
+                    <li>Enables strategic resource allocation across ventures</li>
+                    <li>Provides consolidated performance analytics</li>
+                    <li>Framework being used to manage Dima Tea and SaaS ventures</li>
+                </ul>
+                <a href="https://v0-eth-ub-venture-management.vercel.app/" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Live Project
+                </a>
+            </div>
+            
+            <div class="project-card tea">
+                <div class="project-tag">Health Venture</div>
+                <h4>Dima Organic Tea</h4>
+                <ul>
+                    <li>Unique blend targeting diet-related chronic diseases</li>
+                    <li>Recipe finalized with preventative health benefits</li>
+                    <li>Capital allocation from SaaS ventures enabling launch</li>
+                    <li>Undergoing business name registration process</li>
+                </ul>
+            </div>
+            
+            <h2><i class="fas fa-graduation-cap"></i> Education & Credentials</h2>
+            
+            <div class="section-title">
+                <h3>BSc Aviation Management</h3>
+                <div class="date">2023</div>
+            </div>
+            <p>Graduated with focus on logistics and systems optimization</p>
+            
+            <div class="section-title">
+                <h3>Tax Law Specialization</h3>
+                <div class="date">Current</div>
+            </div>
+            <p>Ministry of Revenue, East Addis Ababa | Enhancing expertise for Patriot ET development</p>
+            
+            <div class="section-title">
+                <h3>Artificial Intelligence Certificate</h3>
+                <div class="date">2024</div>
+            </div>
+            <p>ALX Africa | Machine Learning, Predictive Analytics</p>
+            
+            <div class="section-title">
+                <h3>AI & Python Programming Certificate</h3>
+                <div class="date">2024</div>
+            </div>
+            <p>Addis Ababa Institute of Technology | Supply chain forecasting models</p>
+            
+            <div class="section-title">
+                <h3>Fundamentals of Digital Marketing</h3>
+                <div class="date">2024</div>
+            </div>
+            <p>Google | Digital marketing strategies and analytics</p>
+            
+            <div class="cert-section">
+                <h3><i class="fas fa-certificate"></i> Certifications Portfolio</h3>
+                <p>View my complete certifications portfolio:</p>
+                <a href="https://drive.google.com/file/d/1pzkLMzrLSwkEwY-6Wgeqqwc0dSqnV-qp/view?usp=drive_link" class="cert-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Access Certification Portfolio
+                </a>
+                <p style="margin-top: 15px;"><em>Note: Video demonstrations available upon request for all projects</em></p>
+            </div>
+
+            <div class="personal-profile">
+                <h3><i class="fas fa-heart"></i> Personal Commitment</h3>
+                <p>"I regard myself not only as an entrepreneur but as a solutions architect, deeply committed to optimizing business ecosystems. My work on Patriot ET represents this commitment - solving critical challenges through innovation. As a father of two young children (1.5yr daughter and newborn son), I've mastered the discipline of focused productivity. My entrepreneurial journey is driven by creating meaningful impact while securing a legacy for my family."</p>
+                
+                <div class="family-icon">
+                    <div class="family-member">
+                        <i class="fas fa-female"></i>
+                        <div>Daughter (2 years)</div>
+                    </div>
+                    <div class="family-member">
+                        <i class="fas fa-male"></i>
+                        <div>Son (7 months)</div>
+                    </div>
+                    <div class="family-member">
+                        <i class="fas fa-home"></i>
+                        <div>Family Man</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cover Letter Section -->
+        <section id="cover-letter" class="content-section">
+            <div class="section-pattern"></div>
+            <div class="section-title">
+                <div>
+                    <h2><i class="fas fa-envelope"></i> Value Proposition: Business Solutions Architect</h2>
+                    <p>What I work Best | Attention: Hiring Manager</p>
+                </div>
+                <div class="date">December 30, 2025</div>
+            </div>
+            
+            <p>Dear Hiring Manager,</p>
+            
+            <p>As a solution architect who has developed multiple platforms while creating a venture portfolio management system, I recognize the strategic alignment between the present day business nature and my expertise in optimizing complex distribution ecosystems. My unique approach to business transformation—developed through creating solutions like Patriot ET and EThub—positions me to deliver exceptional value to launching and struggling businesses.</p>
+            
+            <h3>Strategic Value for Businesses</h3>
+            
+            <p><strong>Distribution Ecosystem Optimization:</strong><br>
+            These days businesses, are not just managing distribution—they're orchestrating an ecosystem. My experience developing EThub (connecting entrepreneurs with investors and resources) has equipped me with precisely the skills needed to enhance firms network efficiency. Just as I created frameworks to strengthen Ethiopia's entrepreneurial ecosystem, I can optimize partner integration processes.</p>
+            
+            <p><strong>Process Innovation DNA:</strong><br>
+            My development of Patriot ET—an AI-powered automation system—demonstrates my ability to identify systemic inefficiencies and implement transformative solutions. My approach consistently delivers efficiency improvements in complex systems.</p>
+            
+            <p><strong>Portfolio Management Discipline:</strong><br>
+            Managing multiple ventures under a single portfolio has honed my ability to allocate resources strategically across diverse initiatives. This directly translates to optimizing existing diverse e-commerce projects and partner relationships.</p>
+            
+            <h3>Why My Background Matters for Success</h3>
+            
+            <p>Unlike traditional candidates, I bring:</p>
+            <ul>
+                <li><strong>Problem-First Innovation:</strong> My ventures always begin with identifying critical problems</li>
+                <li><strong>Cross-Functional Execution:</strong> Experience spanning technical development, marketing strategy, financial modeling, and talent acquisition</li>
+                <li><strong>Impact Measurement:</strong> Rigorous focus on quantifiable outcomes and efficiency metrics</li>
+                <li><strong>Adaptive Mindset:</strong> Quick learner who thrives in evolving environments</li>
+            </ul>
+            
+            <p>As a dedicated father of two young children, I've mastered disciplined remote work and productivity optimization—essential for thriving in your flexible environment. I'm prepared to commit to full-time engagement, bringing the same focus that has driven my success in solution development.</p>
+            
+            <p>I've included detailed achievements from my projects in my resume to demonstrate the tangible results I can deliver. Live demos are available through the provided links.</p>
+            
+            <p>I would welcome the opportunity to demonstrate how my ecosystem approach to business optimization can enhance partner network. Let's schedule a conversation to explore how we can achieve transformative results together.</p>
+            
+            <div class="signature">
+                <div class="signature-content">
+                    <p>Respectfully,</p>
+                    <div class="signature-block">
+                        <strong>Abel Gorfu Asefa</strong><br>
+                        Solutions Architect & Systems Optimizer<br>
+                        +251 967 426 188
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Connect with me:</p>
+                    <div class="signature-block">
+                        <i class="fas fa-envelope"></i> abelgorfu6@gmail.com<br>
+                        <i class="fab fa-linkedin"></i> linkedin.com/in/abel-gorfu-asefa<br>
+                        <i class="fas fa-globe"></i> View Portfolio Projects Above
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Job Requirements Section -->
+        <section id="job-requirements" class="content-section">
+            <div class="section-pattern"></div>
+            <h2><i class="fas fa-clipboard-list"></i> Job Requirements Alignment</h2>
+            <p>I've carefully analyzed the global business needs and open position requirements related to my expertise and prepared this alignment matrix to demonstrate my qualifications:</p>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4><i class="fas fa-language"></i> English Communication</h4>
+                    <p>Fluent English speaker with professional writing skills demonstrated in this application and all project documentation. Comfortable with both written and verbal communication for remote collaboration.</p>
+                    <div class="match-badge">Strong Match</div>
+                </div>
+                
+                <div class="requirement-card">
+                    <h4><i class="fas fa-wifi"></i> Remote Work Capability</h4>
+                    <p>Proven experience managing distributed teams and working remotely with:</p>
+                    <ul>
+                        <li>Stable high-speed internet connection</li>
+                        <li>Dedicated home office setup</li>
+                        <li>Experience across multiple time zones</li>
+                    </ul>
+                    <div class="match-badge">Perfect Match</div>
+                </div>
+                
+                <div class="requirement-card">
+                    <h4><i class="fas fa-brain"></i> Quick Learning & Adaptability</h4>
+                    <p>Demonstrated ability to quickly master new domains:</p>
+                    <ul>
+                        <li>Learned tax law for Patriot ET development</li>
+                    <li>Mastered AI programming in 6 months</li>
+                    <li>Adapted aviation principles to business systems</li>
+                    </ul>
+                    <div class="match-badge">Excellent Match</div>
+                </div>
+                
+                <div class="requirement-card">
+                    <h4><i class="fas fa-cube"></i> Outside-the-Box Thinking</h4>
+                    <p>Innovative problem-solving approach:</p>
+                    <ul>
+                        <li>Applied aviation logistics to financial systems</li>
+                        <li>Developed unique solutions to VAT fraud</li>
+                        <li>Created novel entrepreneur ecosystem platform</li>
+                    </ul>
+                    <div class="match-badge">Strong Match</div>
+                </div>
+                
+                <div class="requirement-card">
+                    <h4><i class="fas fa-users"></i> Teamwork & Leadership</h4>
+                    <p>Experience leading cross-functional teams:</p>
+                    <ul>
+                        <li>Managed remote development teams</li>
+                        <li>Collaborated with government agencies</li>
+                        <li>Mentored junior developers</li>
+                    </ul>
+                    <div class="match-badge">Excellent Match</div>
+                </div>
+                
+                <div class="requirement-card">
+                    <h4><i class="fas fa-bullhorn"></i> Marketing & Advertising</h4>
+                    <p>Digital marketing expertise:</p>
+                    <ul>
+                        <li>IIDE Digital Marketing Certified</li>
+                        <li>Developed marketing strategies for all ventures</li>
+                        <li>Created customer acquisition frameworks</li>
+                    </ul>
+                    <div class="match-badge">Strong Match</div>
+                </div>
+                
+                <div class="requirement-card">
+                    <h4><i class="fas fa-chart-pie"></i> Financial Literacy</h4>
+                    <p>Financial management skills:</p>
+                    <ul>
+                        <li>Developed financial systems for Patriot ET</li>
+                        <li>Managed venture capital allocation</li>
+                        <li>Created business financial models</li>
+                    </ul>
+                    <div class="match-badge">Excellent Match</div>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h2><i class="fas fa-question-circle"></i> Position FAQ Responses</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-tasks"></i> Responsibilities
+                    </div>
+                    <p>I'm prepared to contribute across all mentioned areas: marketing, advertising, business analysis, finance, talent acquisition, and HR management. My solution architecture background enables me to quickly understand and optimize any business process. I'm particularly interested in developing systems to enhance partner distribution efficiency.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-money-bill-wave"></i> Income
+                    </div>
+                    <p>I'm confident that my solution architecture skills and business optimization expertise will deliver significant value to a company working with me. I'm open to compensation models that align with the value I create, and I'm eager to demonstrate this value through my initial contributions.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-laptop-house"></i> Working Environment
+                    </div>
+                    <p>I thrive in remote work environments and have optimized my home office for productivity. I'm also willing to travel for abroad jobs and look forward to collaborating with global teams.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i> Working Hours
+                    </div>
+                    <p>I'm prepared for full-time commitment (7-9 hours/day) to maximize my contribution to a company's success. My disciplined approach to time management allows me to maintain high productivity while balancing family responsibilities.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <button class="print-btn" onclick="window.print()" title="Print Application Package">
+        <i class="fas fa-print"></i>
+    </button>
+    
+    <footer>
+        <p>Abel Gorfu Asefa | Application Portfolio</p>
+        <p>Created with dedication for Business Solutions Architect opportunity | © 2025</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Scroll to the section
+            document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+        }
+        
+        // Set current date in cover letter
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.querySelector('.cover-letter .date').textContent = now.toLocaleDateString('en-US', options);
+        
+        // Set current year in footer
+        document.querySelector('footer p:last-child').innerHTML = `Created with dedication for the Business Solutions Architect opportunity | © ${now.getFullYear()}`;
+    </script>
+</body>
+</html>
